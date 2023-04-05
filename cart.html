@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card-grid">
+            <div class="img-grid">
+                <div class="bigimage">
+                    <img src="img/img3/bigimg.png" alt="sd">
+                </div>
+                <div class="smallimages">
+                    <img src="img/img3/small1.png" alt="sd">
+                    <img src="img/img3/small2.png" alt="sd">
+                    <img src="img/img3/small3.png" alt="ds">
+                    <img src="img/img3/small4.png" alt="ds">
+                </div>
+            </div>
+            <div class="data-grid">
+                <div class="producttitle">
+                    <p>ASIAN Men's Wonder-13 Sports Running Shoes</p>
+                </div>
+                <div class="productreviews">
+                    <div class="rating">
+                        <img src="icon/fullstart.svg" alt="">
+                        <img src="icon/fullstart.svg" alt="">
+                        <img src="icon/fullstart.svg" alt="">
+                        <img src="icon/fullstart.svg" alt="">
+                        <img src="icon/halfstar.svg" alt="">
+                    </div>
+                    <div class="reviews">
+                        132 raeviews
+                    </div>
+                </div>
+                <div class="productprice">
+                    <span class="price">$814.00</span><span class="unit">/per kg</span>
+                </div>
+                <div class="product-desc">
+                    Ready to pour… the Font Awesome 6 Beta! The next generation of the web’s favorite icon library + toolkit is now available as a Beta release! Subscribe to Font Awesome Pro and get instant access to the v6 beta.
+                </div>
+                
+                <hr>
+                <div class="styling">
+                    <div class="productquantity">
+                        <p class="qutitle">Quantity</p>
+                        <div class="quantity">
+                            <div class="add">+</div>
+                            <div class="noof">1</div>
+                            <div class="minus">-</div>
+                        </div>
+                    </div>
+                    <div class="productquantity">
+                        <p class="qutitle">Size</p>
+                        <div class="size">
+                            <div class="add activesize">7</div>
+                            <div class="noof">8</div>
+                            <div class="noof">9</div>
+                            <div class="minus">10</div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="buttons">
+                    <button class="btn-fill">Buy now</button>
+                    <button class="btn-line iconbutton">Add to cart <img src="icon/cart.png" alt=""></button>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let colors = [...document.querySelectorAll(".data-grid .styling .productquantity .size div")];
+        let smallimages = [...document.querySelectorAll(".img-grid .smallimages img")]
+        let bigimage = document.querySelector(".img-grid .bigimage img")
+
+        for(let i=0;i<smallimages.length;i++)
+        {
+            smallimages[i].addEventListener('click',()=>{
+                bigimage.src = smallimages[i].src;
+            })
+        }
+
+
+        for(let i=0;i<colors.length;i++)
+        {
+            colors[i].addEventListener('click',()=>{
+                colorsclick(i);
+            })
+        }
+
+
+        function colorsclick(i){
+            for(let j=0;j<colors.length;j++)
+            {
+                if(j===i){
+                    colors[j].classList.add("activesize")
+                }
+                else{
+                    colors[j].classList.remove("activesize")
+                }
+            }
+        }
+    </script>
+</body>
+</html>
